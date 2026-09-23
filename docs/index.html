@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Named profiles for Pi that preload skills and project instructions.">
+  <title>pi-profile-skills</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #0b0d10;
+      --panel: #12161b;
+      --line: #27303a;
+      --text: #edf2f7;
+      --muted: #98a6b5;
+      --accent: #80e7b4;
+      --accent-2: #75baff;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 78% 5%, #173127 0, transparent 30rem),
+        radial-gradient(circle at 15% 35%, #11243a 0, transparent 28rem),
+        var(--bg);
+      font: 16px/1.6 ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    a { color: inherit; }
+    .wrap { width: min(1080px, calc(100% - 2rem)); margin: auto; }
+    nav { display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 0; }
+    .brand { font: 700 1rem ui-monospace, SFMono-Regular, Menlo, monospace; text-decoration: none; }
+    .nav-links { display: flex; gap: 1.25rem; color: var(--muted); }
+    .nav-links a { text-decoration: none; }
+    .nav-links a:hover { color: var(--text); }
+    .hero { padding: 8rem 0 6rem; max-width: 850px; }
+    .eyebrow { color: var(--accent); font: 700 .78rem ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .16em; text-transform: uppercase; }
+    h1 { margin: .65rem 0 1.25rem; font-size: clamp(3rem, 9vw, 6.4rem); line-height: .98; letter-spacing: -.065em; }
+    .lede { max-width: 690px; color: var(--muted); font-size: clamp(1.1rem, 2.2vw, 1.35rem); }
+    .actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 2rem; }
+    .button { border: 1px solid var(--line); border-radius: .65rem; padding: .7rem 1rem; text-decoration: none; font-weight: 650; background: var(--panel); }
+    .button.primary { color: #06110c; background: var(--accent); border-color: var(--accent); }
+    .install { display: flex; align-items: center; gap: 1rem; width: fit-content; max-width: 100%; margin-top: 1.25rem; padding: .8rem 1rem; border: 1px solid var(--line); border-radius: .65rem; background: #090b0e; }
+    code, pre { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+    .install code { overflow-x: auto; white-space: nowrap; }
+    .install button { border: 0; color: var(--muted); background: transparent; cursor: pointer; font: inherit; }
+    section { padding: 4rem 0; }
+    h2 { margin: 0 0 1.6rem; font-size: clamp(1.8rem, 4vw, 2.7rem); letter-spacing: -.035em; }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    .card { padding: 1.4rem; border: 1px solid var(--line); border-radius: .85rem; background: color-mix(in srgb, var(--panel) 88%, transparent); }
+    .card h3 { margin: 0 0 .5rem; }
+    .card p { margin: 0; color: var(--muted); }
+    .example { display: grid; grid-template-columns: .8fr 1.2fr; gap: 2rem; align-items: center; }
+    .example p { color: var(--muted); }
+    pre { margin: 0; overflow-x: auto; padding: 1.4rem; border: 1px solid var(--line); border-radius: .85rem; background: #090b0e; line-height: 1.75; }
+    .key { color: var(--accent-2); }
+    .str { color: var(--accent); }
+    footer { display: flex; justify-content: space-between; gap: 1rem; margin-top: 4rem; padding: 2rem 0; border-top: 1px solid var(--line); color: var(--muted); }
+    @media (max-width: 720px) {
+      .hero { padding: 5rem 0 3rem; }
+      .grid, .example { grid-template-columns: 1fr; }
+      .nav-links a:not(:last-child) { display: none; }
+      footer { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="wrap" aria-label="Main navigation">
+    <a class="brand" href="#">pi-profile-skills</a>
+    <div class="nav-links">
+      <a href="#features">Features</a>
+      <a href="#config">Configuration</a>
+      <a href="https://github.com/moejay/pi-profile-skills">GitHub ↗</a>
+    </div>
+  </nav>
+
+  <main>
+    <header class="hero wrap">
+      <div class="eyebrow">A package for Pi</div>
+      <h1>Switch context.<br>Keep your skills.</h1>
+      <p class="lede">Create named profiles that preload the right Pi skills and instructions before the first agent turn.</p>
+      <div class="actions">
+        <a class="button primary" href="https://www.npmjs.com/package/pi-profile-skills">View on npm</a>
+        <a class="button" href="https://github.com/moejay/pi-profile-skills#readme">Read the docs</a>
+      </div>
+      <div class="install">
+        <code>pi install npm:pi-profile-skills</code>
+        <button id="copy" type="button" aria-label="Copy install command">Copy</button>
+      </div>
+    </header>
+
+    <section id="features" class="wrap">
+      <h2>Profiles without ceremony.</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Preload skills</h3>
+          <p>Load complete skill instructions up front for workflows that use them every session.</p>
+        </article>
+        <article class="card">
+          <h3>Set instructions</h3>
+          <p>Attach a focused initial prompt to each profile for consistent project behavior.</p>
+        </article>
+        <article class="card">
+          <h3>Switch instantly</h3>
+          <p>Use <code>/profile dev</code> in the TUI or <code>pi --profile dev</code> from your shell.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="config" class="wrap example">
+      <div>
+        <div class="eyebrow">Simple configuration</div>
+        <h2>Global or project-specific.</h2>
+        <p>Store reusable profiles in <code>~/.pi/agent/profiles.json</code>. Trusted projects can override them with <code>.pi/profiles.json</code>.</p>
+      </div>
+      <pre aria-label="Profile configuration example"><code>{
+  <span class="key">"dev"</span>: {
+    <span class="key">"skills"</span>: [<span class="str">"pi-subagents"</span>, <span class="str">"use-railway"</span>],
+    <span class="key">"prompt"</span>: <span class="str">"Prefer small, tested changes."</span>
+  },
+  <span class="key">"desktop"</span>: {
+    <span class="key">"skills"</span>: [<span class="str">"omarchy"</span>]
+  }
+}</code></pre>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    <span>MIT licensed · built for <a href="https://pi.dev">Pi</a></span>
+    <a href="https://github.com/moejay/pi-profile-skills">Source on GitHub</a>
+  </footer>
+
+  <script>
+    const button = document.querySelector("#copy");
+    button.addEventListener("click", async () => {
+      await navigator.clipboard.writeText("pi install npm:pi-profile-skills");
+      button.textContent = "Copied";
+      setTimeout(() => button.textContent = "Copy", 1500);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+{
+  "name": "pi-profile-skills",
+  "version": "0.1.0",
+  "description": "Create named Pi profiles that preload selected skills and an initial prompt",
+  "type": "module",
+  "license": "MIT",
+  "author": "M0eJay",
+  "homepage": "https://moejay.github.io/pi-profile-skills/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/moejay/pi-profile-skills.git"
+  },
+  "bugs": {
+    "url": "https://github.com/moejay/pi-profile-skills/issues"
+  },
+  "engines": {
+    "node": ">=22.6"
+  },
+  "keywords": [
+    "pi-package",
+    "pi-coding-agent"
+  ],
+  "files": [
+    "extensions",
+    "lib",
+    "README.md"
+  ],
+  "pi": {
+    "extensions": [
+      "./extensions/profile.ts"
+    ]
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-coding-agent": "*",
+    "@earendil-works/pi-tui": "*"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test test/*.test.ts",
+    "prepublishOnly": "npm test"
+  }
+}
