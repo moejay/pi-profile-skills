@@ -1,8 +1,8 @@
-# pi-profile-skills
+# @moejay/pi-profile
 
 [![CI](https://github.com/moejay/pi-profile-skills/actions/workflows/ci.yml/badge.svg)](https://github.com/moejay/pi-profile-skills/actions/workflows/ci.yml)
-[![npm](https://img.shields.io/npm/v/pi-profile-skills)](https://www.npmjs.com/package/pi-profile-skills)
-[![license](https://img.shields.io/npm/l/pi-profile-skills)](LICENSE)
+[![npm](https://img.shields.io/npm/v/%40moejay%2Fpi-profile)](https://www.npmjs.com/package/@moejay/pi-profile)
+[![license](https://img.shields.io/npm/l/%40moejay%2Fpi-profile)](LICENSE)
 
 Named profiles for [Pi](https://pi.dev) that preload complete skill instructions and an optional initial system prompt before the first agent turn.
 
@@ -13,7 +13,7 @@ Pi normally includes only skill names and descriptions in context, loading each 
 ## Install
 
 ```bash
-pi install npm:pi-profile-skills
+pi install npm:@moejay/pi-profile
 ```
 
 Local development:
@@ -81,7 +81,7 @@ npm pack --dry-run
 npm publish --access public
 ```
 
-The npm name `pi-profile-skills` was available when this package was prepared. After the first manual publish, configure npm trusted publishing for this GitHub repository and the `publish.yml` workflow. Publishing a GitHub release will then test and publish the matching package version with provenance.
+The unscoped name `pi-profile` is already taken, so this package uses the `@moejay` scope. After the first manual publish, configure npm trusted publishing for this GitHub repository and the `publish.yml` workflow. Publishing a GitHub release will then test and publish the matching package version with provenance.
 
 ## Context cost
 

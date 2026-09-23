@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Named profiles for Pi that preload skills and project instructions.">
-  <title>pi-profile-skills</title>
+  <title>@moejay/pi-profile</title>
   <style>
     :root {
       color-scheme: dark;
@@ -67,7 +67,7 @@
 </head>
 <body>
   <nav class="wrap" aria-label="Main navigation">
-    <a class="brand" href="#">pi-profile-skills</a>
+    <a class="brand" href="#">@moejay/pi-profile</a>
     <div class="nav-links">
       <a href="#features">Features</a>
       <a href="#config">Configuration</a>
@@ -81,11 +81,11 @@
       <h1>Switch context.<br>Keep your skills.</h1>
       <p class="lede">Create named profiles that preload the right Pi skills and instructions before the first agent turn.</p>
       <div class="actions">
-        <a class="button primary" href="https://www.npmjs.com/package/pi-profile-skills">View on npm</a>
+        <a class="button primary" href="https://www.npmjs.com/package/@moejay/pi-profile">View on npm</a>
         <a class="button" href="https://github.com/moejay/pi-profile-skills#readme">Read the docs</a>
       </div>
       <div class="install">
-        <code>pi install npm:pi-profile-skills</code>
+        <code>pi install npm:@moejay/pi-profile</code>
         <button id="copy" type="button" aria-label="Copy install command">Copy</button>
       </div>
     </header>
@@ -134,7 +134,7 @@
   <script>
     const button = document.querySelector("#copy");
     button.addEventListener("click", async () => {
-      await navigator.clipboard.writeText("pi install npm:pi-profile-skills");
+      await navigator.clipboard.writeText("pi install npm:@moejay/pi-profile");
       button.textContent = "Copied";
       setTimeout(() => button.textContent = "Copy", 1500);
     });

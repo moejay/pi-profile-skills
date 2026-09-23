@@ -1,5 +1,5 @@
 {
-  "name": "pi-profile-skills",
+  "name": "@moejay/pi-profile",
   "version": "0.1.0",
   "description": "Create named Pi profiles that preload selected skills and an initial prompt",
   "type": "module",
